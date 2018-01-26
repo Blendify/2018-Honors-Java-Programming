@@ -11,8 +11,8 @@
  * Description:
  * This program displays the developer's name on the screen.
  */
- 
-public class Helllo_World {
+
+public class helloWorld {
 
     public static void main(String[] args) {
 
