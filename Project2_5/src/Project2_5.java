@@ -3,7 +3,7 @@
  *
  * Project2_5 application
  *
- * @author 
+ * @author Aaron Carlisle
  * @version 1.00 2018/1/30
  */
 
@@ -15,11 +15,18 @@ public class Project2_5 {
     	KeyboardReader reader = new KeyboardReader();
     	double mass;
     	double velocity;
+    	double momentum;
     	
-    	System.out.print("Enter the object's mass: ");
+    	System.out.print("Enter the object's mass in kilograms: ");
     	mass = reader.readDouble();
 
-    	System.out.print("Enter the object's mass: ");
-    	mass = reader.readDouble();
+    	System.out.print("Enter the object's velocity in meters per second: ");
+    	velocity = reader.readDouble();
+    	
+    	momentum = mass * velocity;
+    	
+    	System.out.print("The objects momentum is: ");
+    	System.out.println(momentum);
+    	
     }
 }

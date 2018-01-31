@@ -6,12 +6,14 @@
 		<root_path>\</root_path>
 		<output_path>classes\</output_path>
 		<source_path>src\</source_path>
-		<jdkprofile_ref/>
-		<compiler_ref/>
+		<jdkprofile_ref>JDK version 1.6.0_14</jdkprofile_ref>
+		<compiler_ref>&lt;Default&gt;</compiler_ref>
 		<ant_ref/>
 	</settings>
 	<ant_events/>
-	<run_items/>
+	<run_items>
+		<item run="Project2_5"/>
+	</run_items>
 	<runtimes>
 		<runtime>
 			<label>&lt;Default&gt;</label>
@@ -19,11 +21,13 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>Project2_5</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
-	<libraries/>
+	<libraries>
+		<library_ref>TerminalIO</library_ref>
+	</libraries>
 	<files>
 		<include>
 			<folderitem>
