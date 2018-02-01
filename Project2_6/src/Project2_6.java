@@ -14,8 +14,10 @@ public class Project2_6 {
     	StandardPen pen = new StandardPen();
     	
     	pen.up();
+    	pen.turn(90);
     	pen.move(25);
     	pen.down();
+    	pen.turn(180);
     	pen.move(50);
 
     }
