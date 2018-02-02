@@ -15,10 +15,56 @@ public class Project2_6 {
     	
     	pen.up();
     	pen.turn(90);
+    	// draw top line
     	pen.move(25);
     	pen.down();
     	pen.turn(180);
     	pen.move(50);
-
+    	
+    	// Upper arrow right
+    	pen.turn(45);
+    	pen.move(25);
+    	pen.move(-25);
+    	pen.turn(270);
+    	pen.move(25);
+    	// go back to right of straight line
+    	pen.move(-25);
+    	pen.turn(45);
+    	pen.move(-50);
+    	
+    	// draw left up arrow
+		pen.turn(225);
+		pen.move(25);
+    	pen.up();
+    	pen.move(-25);
+    	pen.turn(270);
+    	pen.down();
+    	pen.move(25);
+    	pen.up();
+    	pen.move(-25);
+    	pen.turn(-45);
+    	pen.move(-50); // down
+    	
+    	// Draw lower line
+    	pen.turn(-90);
+    	pen.down();
+    	pen.move(50);
+    	
+    	// draw right error
+    	pen.turn(225);
+		pen.move(25);
+    	pen.move(-25);
+    	pen.turn(270);
+    	pen.move(25);
+    	pen.move(-25);
+    	pen.turn(45);
+    	pen.move(50);
+    	
+    	// draw left up arrow
+		pen.turn(225);
+		pen.move(25);
+    	pen.move(-25);
+    	pen.turn(270);
+    	pen.move(25);
     }
 }
