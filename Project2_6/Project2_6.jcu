@@ -18,7 +18,19 @@
 			<path>src\Project2_6.java</path>
 			<source>true</source>
 			<index>0</index>
+			<active>false</active>
+		</docitem>
+		<docitem>
+			<path>..\Project2_5\src\Project2_5.java</path>
+			<source>true</source>
+			<index>1</index>
 			<active>true</active>
+		</docitem>
+		<docitem>
+			<path>..\Project2_2\src\Project2_2.java</path>
+			<source>true</source>
+			<index>2</index>
+			<active>false</active>
 		</docitem>
 	</open_files>
 </workspace_user>

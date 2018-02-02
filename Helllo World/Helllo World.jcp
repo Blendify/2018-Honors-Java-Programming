@@ -19,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>HelloWorld</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
@@ -30,7 +30,7 @@
 				<path>src</path>
 			</folderitem>
 			<fileitem>
-				<path>src\Helllo_World.java</path>
+				<path>src\HellloWorld.java</path>
 				<folder>src</folder>
 			</fileitem>
 		</include>
