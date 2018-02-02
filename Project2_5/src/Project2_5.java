@@ -30,3 +30,14 @@ public class Project2_5 {
     	
     }
 }
+
+/*
+
+--------------------Configuration: Project2_5 - JDK version 1.6.0_14 <Default> - <Default>--------------------
+Enter the object's mass in kilograms: 5
+Enter the object's velocity in meters per second: 10
+The objects momentum is: 50.0
+
+Process completed.
+
+*/
