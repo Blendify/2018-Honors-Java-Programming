@@ -24,3 +24,20 @@ public class Project2_2 {
     	System.out.println("           *");
     }
 }
+
+/*
+--------------------Configuration: Project2_6 - JDK version 1.6.0_14 <Default> - <Default>--------------------
+   *****************
+  *  *************  *
+  * *             * *
+   * *           * *
+    * *  YIELD  * *
+     * *       * *
+      * *     * *
+       * *   * *
+        * * * *
+         * * *
+           *
+
+Process completed.
+*/
