@@ -15,13 +15,13 @@
 	</projects>
 	<open_files>
 		<docitem>
-			<path>src\Project2_6.java</path>
+			<path>..\Project2_5\src\Project2_5.java</path>
 			<source>true</source>
 			<index>0</index>
 			<active>false</active>
 		</docitem>
 		<docitem>
-			<path>..\Project2_5\src\Project2_5.java</path>
+			<path>src\Project2_6.java</path>
 			<source>true</source>
 			<index>1</index>
 			<active>true</active>
