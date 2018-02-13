@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>CalcWeeklyPay</label>
+	</settings>
+	<users>
+		<user>
+			<path>CalcWeeklyPay.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>CalcWeeklyPay.jcp</path>
+		</project>
+		<project>
+			<path>..\CalcWeeklyPayGraph\CalcWeeklyPayGraph.jcp</path>
+		</project>
+	</projects>
+</workspace>
