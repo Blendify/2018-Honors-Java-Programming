@@ -2,12 +2,15 @@
 
 <workspace_user>
 	<active_project>
-		<label>CalcWeeklyPay</label>
+		<label>CalcWeeklyPayGraph</label>
 	</active_project>
 	<projects>
 		<project>
-			<label>CalcWeeklyPay</label>
+			<label>CalcWeeklyPayGraph</label>
 			<showfiles>false</showfiles>
+			<folderitem>
+				<path>classes</path>
+			</folderitem>
 			<folderitem>
 				<path>src</path>
 			</folderitem>
@@ -15,7 +18,7 @@
 	</projects>
 	<open_files>
 		<docitem>
-			<path>..\CalcWeeklyPayGraph\src\CalcWeeklyPayGraph.java</path>
+			<path>src\CalcWeeklyPayGraph.java</path>
 			<source>true</source>
 			<index>0</index>
 			<active>true</active>
