@@ -13,8 +13,5 @@
 		<project>
 			<path>CalcWeeklyPay.jcp</path>
 		</project>
-		<project>
-			<path>..\CalcWeeklyPayGraph\CalcWeeklyPayGraph.jcp</path>
-		</project>
 	</projects>
 </workspace>

@@ -40,6 +40,8 @@ public class CalcWeeklyPay {
 	ThursdayNormalHours  = reader.readDouble("Thursday: ");
 	FridayNormalHours    = reader.readDouble("Friday: ");
 
+	System.out.println("");
+
 	// Ask for overtime hours worked per day
 	System.out.println("Input the number of Overtime hours worked for each of the following days:");
 	MondayOvertimeHours    = reader.readDouble("Monday: ");
@@ -50,15 +52,35 @@ public class CalcWeeklyPay {
     
     // Calculate the weekly pay
     WeeklyPay = ((MondayNormalHours + TuesdayNormalHours +
-	             WednesdayNormalHours + ThursdayNormalHours,
+	             WednesdayNormalHours + ThursdayNormalHours +
 	             FridayNormalHours) * HourlyWage) + 
 	             
 	             // calculate Overtime pay
-	             ((MondayOvertimeHours, TuesdayOvertimeHours,
-	       		 WednesdayOvertimeHours, ThursdayOvertimeHours,
+	             ((MondayOvertimeHours + TuesdayOvertimeHours +
+	       		 WednesdayOvertimeHours + ThursdayOvertimeHours +
 	     		 FridayOvertimeHours)) * (HourlyWage * OVER_TIME_PAY);
 
     System.out.println("The employe's weekly pay is: $" + WeeklyPay);
 
     }
 }
+
+/*
+--------------------Configuration: CalcWeeklyPay - JDK version 1.6.0_14 <Default> - <Default>--------------------
+Input the employe's hourly wage: 12.5
+Input the number of normal hours worked for each of the following days:
+Monday: 7
+Tuesday: 8
+Wednesday: 5
+Thursday: 3
+Friday: 7
+Input the number of Overtime hours worked for each of the following days:
+Monday: 1
+Tuesday: 0
+Wednesday: 3
+Thursday: 2
+Friday: 3
+The employe's weekly pay is: $543.75
+
+Process completed.
+*/
