@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>calcTeacherPay</label>
+	</settings>
+	<users>
+		<user>
+			<path>calcTeacherPay.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>calcTeacherPay.jcp</path>
+		</project>
+	</projects>
+</workspace>
