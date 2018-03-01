@@ -3,7 +3,7 @@
  *
  * powerFunction application
  *
- * Discription: This program calculats all positive powers up to a defined power
+ * Discription: This program keeps calculating powers until the uses enters -1
  *
  * @author Aaron Carlisle
  * @version 1.00 2018/3/1
@@ -29,18 +29,13 @@ public class powerFunction {
 
 /*
 --------------------Configuration: powerFunction - JDK version 1.6.0_14 <Default> - <Default>--------------------
-This program calculats all positive powers up to a defined power
-Enter the base (x^n): 2.5
-Enter the highest exponent (2.5^x): 10
-9536.7431640625
-3814.697265625
-1525.87890625
-610.3515625
-244.140625
-97.65625
-39.0625
-15.625
-6.25
+Enter the base (x^n): 5
+Enter the exponent (5.0^x): 0
+1.0
+Enter a new base or -1 to stop (x^n): 5
+Enter the exponent (5.0^x): 2
+25.0
+Enter a new base or -1 to stop (x^n): -1
 
 Process completed.
  */
