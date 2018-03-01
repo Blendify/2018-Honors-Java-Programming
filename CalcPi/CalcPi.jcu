@@ -15,15 +15,9 @@
 	</projects>
 	<open_files>
 		<docitem>
-			<path>src\CalcPi.java</path>
-			<source>true</source>
-			<index>0</index>
-			<active>true</active>
-		</docitem>
-		<docitem>
 			<path>..\CalcWeeklyPay\src\CalcWeeklyPay.java</path>
 			<source>true</source>
-			<index>1</index>
+			<index>0</index>
 			<active>false</active>
 		</docitem>
 	</open_files>
