@@ -15,15 +15,14 @@ public class powerFunction {
     
     public static void main(String[] args) {
     	KeyboardReader reader = new KeyboardReader();
+
+    	double base = reader.readDouble("Enter the base (x^n): ");;
+    	int exponent;
     	
-    	System.out.println("This program calculats all positive powers up to a defined power");
-    	
-    	double base = reader.readDouble("Enter the base (x^n): ");
-    	int exponent = reader.readInt("Enter the highest exponent (" + base +"^x): ");
-    	
-    	while (exponent != 1.0) {
+    	while (base != -1.0) {
+    		exponent = reader.readInt("Enter the exponent (" + base +"^x): ");
 			System.out.println(Math.pow(base, exponent));
-    		exponent--;
+    		base = reader.readDouble("Enter a new base or -1 to stop (x^n): ");
     	}
     }
 }
