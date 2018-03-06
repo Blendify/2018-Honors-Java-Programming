@@ -16,17 +16,17 @@ public class calcTeacherPay {
     	
 		int salaryStarting = 0;
 		int salaryIncrease; // Should be a percentage
-		int salaryCurrent = salaryStarting;
+		int salaryCurrent;
 		int numYears;
 		
 		salaryStarting = reader.readInt("Enter the starting salary: ");
 		salaryIncrease = reader.readInt("Enter the starting increase percent: ");
-		numYears = reader.readInt("Enter the number of years to display");
+		numYears = reader.readInt("Enter the number of years to display: ");
 		
 		// i serves as the current year
-		for (int i; i != numYears; i++) {
-			salaryCurrent = salaryCurrent * salaryIncrease;
-			System.out.println(i + ": ");
+		for (int i = 1; i != numYears + 1; i++) {
+			salaryCurrent = salaryStarting * salaryIncrease;
+			System.out.println(i + ": " + salaryCurrent);
 		}
     }
 }
