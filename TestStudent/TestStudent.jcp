@@ -32,12 +32,10 @@
 				<path>src</path>
 			</folderitem>
 			<fileitem>
-				<path>src\Student.java</path>
-				<folder>src</folder>
+				<path>Student.java</path>
 			</fileitem>
 			<fileitem>
-				<path>src\StudentInterface.java</path>
-				<folder>src</folder>
+				<path>StudentInterface.java</path>
 			</fileitem>
 			<fileitem>
 				<path>src\TestStudent.java</path>

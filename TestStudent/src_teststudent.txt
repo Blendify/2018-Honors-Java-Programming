@@ -1,3 +1,3 @@
-C:\Users\carlisleaj1\Documents\GitHub\2018-Honors-Java-Programming\TestStudent\src\Student.java
-C:\Users\carlisleaj1\Documents\GitHub\2018-Honors-Java-Programming\TestStudent\src\StudentInterface.java
+C:\Users\carlisleaj1\Documents\GitHub\2018-Honors-Java-Programming\TestStudent\Student.java
+C:\Users\carlisleaj1\Documents\GitHub\2018-Honors-Java-Programming\TestStudent\StudentInterface.java
 C:\Users\carlisleaj1\Documents\GitHub\2018-Honors-Java-Programming\TestStudent\src\TestStudent.java

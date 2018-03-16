@@ -20,6 +20,35 @@ public class Student {
       test2 = 0;
       test3 = 0;
    }
+   
+   public Student(String nm){
+   //Initialize a new student's name to the empty string and the test
+   //scores to zero.
+      name  = nm;
+      test1 = 0;
+      test2 = 0;
+      test3 = 0;
+   }
+ 
+    public Student(String nm, int t1, int t2, int t3){
+   //Initialize a new student's name to the empty string and the test
+   //scores to zero.
+      name  = nm;
+      test1 = t1;
+      test2 = t2;
+      test3 = t3;
+   }
+
+  public Student(Student s){
+   //Initialize a new student's name to the empty string and the test
+   //scores to zero.
+      name  = s.name;
+      test1 = s.test1;
+      test2 = s.test2;
+      test3 = s.test3;
+   }
+
+
     
    //Other methods
 

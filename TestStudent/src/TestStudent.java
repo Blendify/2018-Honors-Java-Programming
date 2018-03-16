@@ -10,19 +10,51 @@
 public class TestStudent{
 
    public static void main (String[] args){
-      Student s1, s2;      
-      String str;
-      int i;
-
-      s1 = new Student();     // Instantiate a student object
-      s1.setName ("Bill");    // Set the student's name to "Bill"
-      s1.setScore (1,84);     // Set the score on test 1 to 84
-      s1.setScore (2,86);     //               on test 2 to 86
-      s1.setScore (3,88);     //               on test 3 to 88
-      System.out.println("\nHere is student s1\n" + s1);
+      Student s1, s2, s3, s4;
       
-      s2 = s1;               // s1 and s2 now refer to the same object 
-      s2.setName ("Ann");    // Set the name through s2
-      System.out.println ("\nName of s1 is now: " + s1.getName());
+      System.out.println("Testing Default Constuctor:");
+      s1 = new Student();
+      System.out.println(s1);
+      
+      System.out.println("Testing Constuctor with name:");
+      s2 = new Student("Name 2");
+      System.out.println(s2);
+      
+      System.out.println("Testing Constuctor with names and 3 test scores:");
+      s3 = new Student("Name 3", 100, 100, 100);
+      System.out.println(s3);
+      
+      System.out.println("Testing Constuctor that copies s3:");
+      s4 = new Student(s3);
+      System.out.println(s4);
+
+      System.out.println("Testing method: setName of s1 to \"Bob\"");
+      s1.setName("Bob");
+      System.out.println(s1);
+      
+      System.out.println("Testing method: getName of s1");
+      s1.getName();
+      System.out.println(s1);
+      
+      System.out.println("Testing method: setScore of s1 to 80, 90, 100");
+      s1.setScore(1,80);
+      s1.setScore(2,90);
+      s1.setScore(3,100);
+      System.out.println(s1);
+      
+	  System.out.println("Testing method: getScore of s1 test 1:");
+      System.out.println(s1.getScore(1));
+      System.out.println(s1);
+
+	  System.out.println("Testing method: getAverage of s1:");
+      System.out.println((s1.getAverage());
+      System.out.println(s1);      
+
+	  System.out.println("Testing method: getHighScore of s1:");
+      System.out.println((s1.getHighScore());
+      System.out.println(s1);      
+
+	  System.out.println("Testing method: toString of s1:");
+      System.out.println(s1);
    }
 }
