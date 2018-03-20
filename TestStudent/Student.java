@@ -22,8 +22,7 @@ public class Student {
    }
    
    public Student(String nm){
-   //Initialize a new student's name to the empty string and the test
-   //scores to zero.
+   //Initialize a new student with name and the test scores to zero.
       name  = nm;
       test1 = 0;
       test2 = 0;
@@ -31,8 +30,7 @@ public class Student {
    }
  
     public Student(String nm, int t1, int t2, int t3){
-   //Initialize a new student's name to the empty string and the test
-   //scores to zero.
+   //Initialize a new student with name and all three test scores
       name  = nm;
       test1 = t1;
       test2 = t2;
@@ -40,8 +38,7 @@ public class Student {
    }
 
   public Student(Student s){
-   //Initialize a new student's name to the empty string and the test
-   //scores to zero.
+   //Initialize a new student that copies another student
       name  = s.name;
       test1 = s.test1;
       test2 = s.test2;
@@ -95,13 +92,13 @@ public class Student {
    public String getHighestScores(){
    //Returns all test scores in descending order
 	  String str;
-	  str = "Highest scores:\n" + Math.max(test1, Math.max(test2, test3)) + "\n";/*
-	  if (Math.min(test1, Math.min(test2, test3)) != test1) && (Math.max(test1, Math.min(test2, test3)) != test1) {
+	  str = Math.max(test1, Math.max(test2, test3)) + "\n";
+	  if ((Math.min(test1, Math.min(test2, test3)) != test1) && (Math.max(test1, Math.max(test2, test3)) != test1)) {
 	  	str += test1 + "\n";}
-	  if (Math.min(test1, Math.min(test2, test3)) != test2) && (Math.max(test1, Math.min(test2, test3)) != test2) {
+	  if ((Math.min(test1, Math.min(test2, test3)) != test2) && (Math.max(test1, Math.max(test2, test3)) != test2)) {
 	  	str += test2 + "\n";}
-	  if (Math.min(test1, Math.min(test2, test3)) != test3) && (Math.max(test1, Math.min(test2, test3)) != test3) {
-	  	str += test3 + "\n";}*/
+	  if ((Math.min(test1, Math.min(test2, test3)) != test3) && (Math.max(test1, Math.max(test2, test3)) != test3)) {
+	  	str += test3 + "\n";}
 	  str += Math.min(test1, Math.min(test2, test3));
 	  		
 	  return str;
