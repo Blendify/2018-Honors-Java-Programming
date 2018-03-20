@@ -47,11 +47,11 @@ public class TestStudent{
       System.out.println(s1);
 
 	  System.out.println("Testing method: getAverage of s1:");
-      System.out.println((s1.getAverage());
+      System.out.println(s1.getAverage());
       System.out.println(s1);      
 
 	  System.out.println("Testing method: getHighScore of s1:");
-      System.out.println((s1.getHighScore());
+      System.out.println(s1.getHighScore());
       System.out.println(s1);      
 
 	  System.out.println("Testing method: toString of s1:");
