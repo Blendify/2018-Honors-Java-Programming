@@ -91,7 +91,22 @@ public class Student {
       if (test3 > highScore) highScore = test3;
       return highScore;
    }
-    
+   
+   public String getHighestScores(){
+   //Returns all test scores in descending order
+	  String str;
+	  str = "Highest scores:\n" + Math.max(test1, test2, test3) + "\n";
+	  if (Math.min(test1, test2, test3) != test1) && (Math.min(test1, test2, test3) != test1) {
+	  	str += test1 + "\n";}
+	  if (Math.min(test1, test2, test3) != test2) && (Math.min(test1, test2, test3) != test2) {
+	  	str += test2 + "\n";}
+	  if (Math.min(test1, test2, test3) != test3) && (Math.min(test1, test2, test3) != test3) {
+	  	str += test3 + "\n";}
+	  str += Math.min(test1, test2, test3);
+	  		
+	  return str;
+   }
+
    public String toString(){
    //Construct and return a string representation of the student
       String str;

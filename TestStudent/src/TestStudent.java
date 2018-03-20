@@ -56,5 +56,7 @@ public class TestStudent{
 
 	  System.out.println("Testing method: toString of s1:");
       System.out.println(s1);
+      
+      System.out.print(s1.getHighestScores());
    }
 }
