@@ -3,10 +3,13 @@
  *
  * TestStudent application
  *
+ * Discription: This application uses the Student class and
+ *              tests it by using every constructor and method.
+ *
  * @author Aaron Carlisle
- * @version 1.00 2018/3/15
+ * @version 1.00 2018/04/03
  */
- 
+
 public class TestStudent{
 
    public static void main (String[] args){

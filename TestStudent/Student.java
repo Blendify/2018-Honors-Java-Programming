@@ -1,6 +1,14 @@
-/* Student.java
-Manage a student's name and three test scores.
-*/
+/**
+ * @(#)Student.java
+ *
+ * Student class
+ *
+ * Discription: Manage a student's name and three test scores
+ *
+ * @author Aaron Carlisle
+ * @version 1.00 2018/04/03
+ */
+
 public class Student {
 
    //Instance variables
@@ -10,8 +18,7 @@ public class Student {
    private int test2;               //Score on test 2
    private int test3;               //Score on test 3
 
-   //Constructor method
-
+   //Constructor methods
    public Student(){
    //Initialize a new student's name to the empty string and the test
    //scores to zero.
@@ -46,7 +53,6 @@ public class Student {
    }
 
 
-    
    //Other methods
 
    public void setName (String nm){
