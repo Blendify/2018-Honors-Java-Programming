@@ -32,6 +32,10 @@
 				<path>src</path>
 			</folderitem>
 			<fileitem>
+				<path>src\Rational.java</path>
+				<folder>src</folder>
+			</fileitem>
+			<fileitem>
 				<path>src\TestRational.java</path>
 				<folder>src</folder>
 			</fileitem>
