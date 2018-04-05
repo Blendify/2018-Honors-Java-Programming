@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>TestRational</label>
+	</settings>
+	<users>
+		<user>
+			<path>TestRational.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>TestRational.jcp</path>
+		</project>
+	</projects>
+</workspace>

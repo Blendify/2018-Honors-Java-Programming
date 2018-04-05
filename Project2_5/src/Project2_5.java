@@ -10,24 +10,24 @@
 import TerminalIO.KeyboardReader;
 
 public class Project2_5 {
-    
+
     public static void main(String[] args) {
     	KeyboardReader reader = new KeyboardReader();
     	double mass;
     	double velocity;
     	double momentum;
-    	
+
     	System.out.print("Enter the object's mass in kilograms: ");
     	mass = reader.readDouble();
 
     	System.out.print("Enter the object's velocity in meters per second: ");
     	velocity = reader.readDouble();
-    	
+
     	momentum = mass * velocity;
-    	
+
     	System.out.print("The objects momentum is: ");
     	System.out.println(momentum);
-    	
+
     }
 }
 
