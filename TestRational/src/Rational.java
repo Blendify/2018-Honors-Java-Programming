@@ -27,7 +27,12 @@ public class Rational {
 		this.common_dedom(b);
 
 		this.numerator += b.numerator;
+    }
+    
+    public void subtract(Rational b){
+		this.common_dedom(b);
 
+		this.numerator -= b.numerator;
     }
     
     public void common_dedom(Rational b){
