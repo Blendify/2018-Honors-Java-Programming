@@ -23,15 +23,10 @@ public class TestRational {
     
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
-    
-    System.out.println(rat1);
-    
-    rat1.add(rat2);
-    
-    System.out.println(rat1);
-    System.out.println();
-	System.out.println(rat2);
 
-    
+	//rat1.simplify();
+    rat1.subtract(rat2);
+
+    System.out.println(rat1);
     }
 }

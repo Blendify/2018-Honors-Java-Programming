@@ -24,34 +24,40 @@ public class Rational {
     }
     
     public void add(Rational b){
-		this.common_dedom(b);
+   		int temp_numer1, temp_denom1, temp_numer2, temp_denom2;
+    	temp_numer1 = this.numerator   * b.denominator;
+    	temp_denom1 = this.denominator * b.denominator;
+    	temp_numer2 = b.numerator   * this.denominator;
+    	temp_denom2 = b.denominator * this.denominator;
 
-		this.numerator += b.numerator;
+		this.numerator   = temp_numer1 + temp_numer2;
+    	this.denominator = temp_denom1;
+		
+		this.simplify();
     }
     
     public void subtract(Rational b){
-		this.common_dedom(b);
-
-		this.numerator -= b.numerator;
-    }
-    
-    public void common_dedom(Rational b){
-    // Finds the common denomiator beween two numbers and sets the rational values accordingly
-    
-        int temp_numer1, temp_denom1, temp_numer2, temp_denom2;
+   		int temp_numer1, temp_denom1, temp_numer2, temp_denom2;
     	temp_numer1 = this.numerator   * b.denominator;
     	temp_denom1 = this.denominator * b.denominator;
     	temp_numer2 = b.numerator   * this.denominator;
     	temp_denom2 = b.denominator * this.denominator;
     	
-    	this.numerator   = temp_numer1;
-    	this.denominator = temp_denom1;
-    
+		this.numerator   = temp_numer1 - temp_numer2;
+		this.denominator = temp_denom1;
+		
+		this.simplify();
     }
+ 
     
-    public void simplify(Rational b){
+    public void simplify(){
     //simplifies a fraction to its simplist form
-    
+    	for (int i = 9; i >= 2; i--){
+     		if ((this.numerator % i == 0) && (this.denominator % i == 0)){
+    			this.numerator /= i;
+    			this.denominator /= i;
+    		}
+   		}
     }
 
     public String toString(){
