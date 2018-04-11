@@ -60,7 +60,7 @@ public class Rational {
 	}
 
 	private void common_factor(Rational b){
-			temp_numer1 = this.numerator   * b.denominator;
+		temp_numer1 = this.numerator   * b.denominator;
     	temp_denom1 = this.denominator * b.denominator;
     	temp_numer2 = b.numerator   * this.denominator;
     	temp_denom2 = b.denominator * this.denominator;
@@ -85,6 +85,7 @@ public class Rational {
     }
 
     public Boolean compare(Rational b){
+   	//Compares two rationals for equality
     	this.common_factor(b);
     	if ((temp_numer1 == temp_numer2) && (temp_denom1 == temp_denom2))
     		return true;
@@ -93,9 +94,9 @@ public class Rational {
     }
 
     public String toString(){
-    //Construct and return a string representation of the fraction
+    //Construct and returns a string representation of the fraction
     	String str;
-    	str = numerator + "\n--\n" + denominator;
+    	str = numerator + "\n--\n" + denominator + "\n";
     	return str;
     }
 }
