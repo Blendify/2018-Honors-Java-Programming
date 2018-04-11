@@ -91,7 +91,7 @@ public class Rational {
 
     public void simplify(){
     //Simplifies a fraction to its simplist form
-    	for (int i = 9; i >= 2; i--){
+    	for (int i = Math.max(this.numerator, this.denominator); i >= 2; i--){
      		if ((this.numerator % i == 0) && (this.denominator % i == 0)){
     			this.numerator /= i;
     			this.denominator /= i;
