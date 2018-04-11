@@ -25,7 +25,7 @@ public class TestRational {
     rat2 = new Rational(rat2_num, rat2_denom);
 
 	//rat1.simplify();
-    rat1.subtract(rat2);
+    rat1.add(rat2);
 
     System.out.println(rat1);
     }
