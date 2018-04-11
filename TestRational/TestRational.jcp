@@ -19,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>TestRational</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
