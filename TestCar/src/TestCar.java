@@ -8,7 +8,7 @@
  */
 
 import TurtleGraphics.*;
-import TerminalIO.*
+import TerminalIO.*;
 
 public class TestCar {
     
