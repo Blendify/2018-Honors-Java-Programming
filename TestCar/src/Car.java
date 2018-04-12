@@ -20,7 +20,7 @@ public class Car {
     	pen.setColor(Color.red);
     }
     
-    public Car() {
+    public Car(double x, double y) {
 		this();
 		xPos = x;
 		yPos = y;
