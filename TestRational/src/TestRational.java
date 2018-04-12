@@ -29,25 +29,25 @@ public class TestRational {
     System.out.println("Adding:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
-    rat1.add(rat2);
+    rat3 = rat1.add(rat2);
     System.out.println(rat1);
     
     System.out.println("Subtracting:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
-    rat1.subtract(rat2);
+    rat3 = rat1.subtract(rat2);
     System.out.println(rat1);
     
     System.out.println("Multiplying:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
-    rat1.multiply(rat2);
+    rat3 = rat1.multiply(rat2);
     System.out.println(rat1);
     
     System.out.println("Dividing:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
-	rat1.divide(rat2);
+	rat3 = rat1.divide(rat2);
     System.out.println(rat1);    
     
     System.out.println("Simplifing  fraction 1:");

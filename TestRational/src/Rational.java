@@ -30,36 +30,28 @@ public class Rational {
     public Rational add(Rational b){
     //Adds two rationals
     	this.common_factor(b);
-		this.Rational(temp_numer1 + temp_numer2, temp_denom1);
-		this.simplify();
 		
-		return this;
+		return new Rational(temp_numer1 + temp_numer2, temp_denom1).simplify(this);
     }
 
     public Rational subtract(Rational b){
     //Subtracts two rationals
 		this.common_factor(b);
-		this.Rational(temp_numer1 - temp_numer2, temp_denom1);
-		this.simplify();
 		
-		return this;
+		return new Rational(temp_numer1 - temp_numer2, temp_denom1).simplify(this);
     }
 
     public Rational multiply(Rational b){
 	   	this.common_factor(b);
-		this.Rational(temp_numer1 * temp_numer2, temp_denom1 * temp_denom2);
-		this.simplify();
-		
-		return this;
+		Rational c = new Rational (temp_numer1 * temp_numer2, temp_denom1 * temp_denom2);
+		return c.simplify(c);
 	}
 
     public Rational divide(Rational b){
 	//Divides two fractions
 	   	this.common_factor(b);
-		this.Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2);
-		this.simplify();
 		
-		return this;
+		return new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2).simplify(this);
 	}
 
 	private void common_factor(Rational b){
@@ -69,12 +61,11 @@ public class Rational {
     	temp_denom2 = b.denominator * this.denominator;
 	}
 
-	public void reciprocal(){
-		temp_numer1 = this.numerator;
-		temp_denom1 = this.denominator;
+	public Rational reciprocal(Rational b){
+		temp_numer1 = b.numerator;
+		temp_denom1 = b.denominator;
 
-		this.numerator = temp_denom1;
-		this.denominator = temp_numer1;
+		return new Rational(temp_denom1, temp_numer1);
 	}
 
     public void simplify(){
@@ -84,7 +75,7 @@ public class Rational {
     			this.numerator /= i;
     			this.denominator /= i;
     		}
-   	}
+   		}
     }
 
     public Boolean compare(Rational b){
