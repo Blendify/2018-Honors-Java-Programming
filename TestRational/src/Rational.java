@@ -27,36 +27,39 @@ public class Rational {
     }
 
     /* METHODS */
-    public void add(Rational b){
+    public Rational add(Rational b){
     //Adds two rationals
     	this.common_factor(b);
-		this.numerator   = temp_numer1 + temp_numer2;
-    	this.denominator = temp_denom1;
+		this.Rational(temp_numer1 + temp_numer2, temp_denom1);
 		this.simplify();
+		
+		return this;
     }
 
-    public void subtract(Rational b){
+    public Rational subtract(Rational b){
     //Subtracts two rationals
 		this.common_factor(b);
-		this.numerator   = temp_numer1 - temp_numer2;
-		this.denominator = temp_denom1;
+		this.Rational(temp_numer1 - temp_numer2, temp_denom1);
 		this.simplify();
+		
+		return this;
     }
 
-	public void multiply(Rational b){
-	//Multiplies two fractions
+    public Rational multiply(Rational b){
 	   	this.common_factor(b);
-		this.numerator   = temp_numer1 * temp_numer2;
-		this.denominator = temp_denom1 * temp_denom2;
+		this.Rational(temp_numer1 * temp_numer2, temp_denom1 * temp_denom2);
 		this.simplify();
+		
+		return this;
 	}
 
-    public void divide(Rational b){
+    public Rational divide(Rational b){
 	//Divides two fractions
 	   	this.common_factor(b);
-		this.numerator   = temp_numer1 * temp_denom2;
-		this.denominator = temp_denom1 * temp_numer2;
+		this.Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2);
 		this.simplify();
+		
+		return this;
 	}
 
 	private void common_factor(Rational b){
