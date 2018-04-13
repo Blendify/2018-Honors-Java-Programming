@@ -19,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>TestCar</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
@@ -32,6 +32,10 @@
 			<folderitem>
 				<path>src</path>
 			</folderitem>
+			<fileitem>
+				<path>src\Car.java</path>
+				<folder>src</folder>
+			</fileitem>
 			<fileitem>
 				<path>src\TestCar.java</path>
 				<folder>src</folder>

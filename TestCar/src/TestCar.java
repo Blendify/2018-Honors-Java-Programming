@@ -19,14 +19,14 @@ public class TestCar {
     	
     	x = reader.readDouble("Intial x position: ");
     	y = reader.readDouble("Intial x position: ");
-    	Car lambo = new car(x, y);
+    	Car lambo = new Car(x, y);
     	lambo.draw();
     	
     	while(true){
     		x = reader.readDouble("New x position: ");
     		y = reader.readDouble("New y position: ");
     		lambo.erase();
-    		lambo.move();
+    		lambo.move(x, y);
     		lambo.draw();
     	}
     }

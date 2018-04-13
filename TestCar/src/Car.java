@@ -27,6 +27,13 @@ public class Car {
     }
     
     public void draw(){
+    	double carLength = 50.0;
+    	double carHeight = 25.0;
+    	double wheelRadius = 5.0;
+    	drawRect(xPos, yPos, carLength, carHeight);
+    	drawRect(xPos, yPos + carHeight, 30, 15);
+    	drawCircle(xPos - wheelRadius * 2.0, yPos - wheelRadius *2.0, wheelRadius);
+    	drawCircle(xPos, yPos, wheelRadius);
     }
     
     public void erase(){
@@ -57,5 +64,18 @@ public class Car {
 		pen.move(x1, y1);
 		pen.down();
 		pen.move(x2, y2);
+	}
+	
+	private void drawRect(double x, double y, double length, double height){
+		x = x - (length / 2.0);
+		y = y - (height / 2.0);
+		pen.setDirection(0);
+		drawLine(x, y, x + length, y);
+		pen.setDirection(90);
+		drawLine(x + length, y, x + length, y + height);
+		pen.setDirection(180);
+		drawLine(x + length, y + height, x, y + height);
+		pen.setDirection(270);
+		drawLine(x, y + height, x, y);
 	}
 }
