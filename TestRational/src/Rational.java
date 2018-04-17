@@ -58,13 +58,6 @@ public class Rational {
 		return c;
 	}
 
-	private void common_factor(Rational b){
-		temp_numer1 = this.numerator   * b.denominator;
-    	temp_denom1 = this.denominator * b.denominator;
-    	temp_numer2 = b.numerator   * this.denominator;
-    	temp_denom2 = b.denominator * this.denominator;
-	}
-
 	public Rational reciprocal(Rational b){
 		temp_numer1 = b.numerator;
 		temp_denom1 = b.denominator;
@@ -97,4 +90,11 @@ public class Rational {
     	str = numerator + "\n--\n" + denominator + "\n";
     	return str;
     }
+    
+    private void common_factor(Rational b){
+		temp_numer1 = this.numerator   * b.denominator;
+    	temp_denom1 = this.denominator * b.denominator;
+    	temp_numer2 = b.numerator   * this.denominator;
+    	temp_denom2 = b.denominator * this.denominator;
+	}
 }
