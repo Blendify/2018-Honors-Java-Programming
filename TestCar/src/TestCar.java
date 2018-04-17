@@ -3,22 +3,22 @@
  *
  * TestCar application
  *
+ * Discription: Test car class by drawing a car then allowing it to be moved.
+ *
  * @author Aaron Carlisle
- * @version 1.00 2018/4/12
+ * @version 1.00 2018/4/17
  */
 
-import TurtleGraphics.*;
-import TerminalIO.*;
+import TerminalIO.*; // used for coordinate input
 
 public class TestCar {
     
     public static void main(String[] args) {
     	KeyboardReader reader = new KeyboardReader();
     	double x, y;
-    	//double radius;
     	
     	x = reader.readDouble("Intial x position: ");
-    	y = reader.readDouble("Intial x position: ");
+    	y = reader.readDouble("Intial y position: ");
     	Car lambo = new Car(x, y);
     	lambo.draw();
     	
@@ -31,3 +31,12 @@ public class TestCar {
     	}
     }
 }
+
+/*
+--------------------Configuration: TestCar - JDK version 1.6.0_14 <Default> - <Default>--------------------
+Intial x position: 0
+Intial y position: 0
+New x position: 50
+New y position: -50
+New x position:
+*/

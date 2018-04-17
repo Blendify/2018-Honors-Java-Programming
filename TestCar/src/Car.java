@@ -1,19 +1,24 @@
 /**
  * @(#)Car.java
  *
+ * Car class
+ *
+ * Discription: Draws a red car at set positions
  *
  * @author Aaron Carlisle
- * @version 1.00 2018/4/12
+ * @version 1.00 2018/4/17
  */
 
-import TurtleGraphics.*;
-import java.awt.Color;
+import TurtleGraphics.*; // Used to draw a car
+import java.awt.Color; // Needed for erase method
 
 public class Car {
 	private StandardPen pen;
 	private double xPos, yPos;
 
+	/* CONSTRUCTORS */
     public Car() {
+    //Default constructor
     	xPos = 0;
     	yPos = 0;
     	pen = new StandardPen();
@@ -21,12 +26,14 @@ public class Car {
     }
     
     public Car(double x, double y) {
+    //Constructor with a defined position
 		this();
 		xPos = x;
 		yPos = y;
     }
     
     public void draw(){
+    //Draws a car
     	double carLength = 50.0;
     	double carHeight = 25.0;
     	double wheelRadius = 5.0;
@@ -37,17 +44,20 @@ public class Car {
     }
     
     public void erase(){
+   //Redraws the car in white to make it erase
     	pen.setColor(Color.white);
     	draw();
     	pen.setColor(Color.red);
     }
     
     public void move(double x, double y){
+    //Moves the car to a new position
     	xPos = x;
     	yPos = y;
     }
 	
 	private void drawCircle(double x, double y, double r){
+	//Draws a circle at point x, y with a defined radius r
 		double side = 2.0 * Math.PI * r / 120.0;
 		pen.up();
 		pen.move(x + r, y - side / 2.0);
@@ -60,6 +70,7 @@ public class Car {
 	}
 	
 	private void drawLine(double x1, double y1, double x2, double y2){
+	//Draws a line between two points
 		pen.up();
 		pen.move(x1, y1);
 		pen.down();
@@ -67,6 +78,7 @@ public class Car {
 	}
 	
 	private void drawRect(double x, double y, double length, double height){
+	//Draws a rectangle with a center at point x, y and a length and height
 		x = x - (length / 2.0);
 		y = y - (height / 2.0);
 		pen.setDirection(0);
