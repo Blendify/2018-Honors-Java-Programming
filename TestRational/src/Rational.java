@@ -21,7 +21,7 @@ public class Rational {
     }
 
     public Rational(int numer, int denom) {
-    // Create a fraction with client defined values
+    // Create a fraction with defined values
     	numerator = numer;
     	denominator = denom;
     }
@@ -44,6 +44,7 @@ public class Rational {
     }
 
     public Rational multiply(Rational b){
+    //Multiplies two fractions
 	   	this.common_factor(b);
 		Rational c = new Rational (temp_numer1 * temp_numer2, temp_denom1 * temp_denom2);
 		c.simplify();
@@ -58,11 +59,13 @@ public class Rational {
 		return c;
 	}
 
-	public Rational reciprocal(Rational b){
-		temp_numer1 = b.numerator;
-		temp_denom1 = b.denominator;
-
-		return new Rational(temp_denom1, temp_numer1);
+	public Rational reciprocal(){
+	//Finds the reciprocal of an rational
+		temp_numer1 = this.numerator;
+		temp_denom1 = this.denominator;
+		
+		Rational c = new Rational(temp_denom1, temp_numer1);
+		return c;
 	}
 
     public void simplify(){
@@ -92,6 +95,8 @@ public class Rational {
     }
     
     private void common_factor(Rational b){
+    //Quick and dirty method to find a common denominator by
+    //mulitpling each fraction by the second's dedenominator
 		temp_numer1 = this.numerator   * b.denominator;
     	temp_denom1 = this.denominator * b.denominator;
     	temp_numer2 = b.numerator   * this.denominator;

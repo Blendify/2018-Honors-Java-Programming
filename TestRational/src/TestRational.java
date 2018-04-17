@@ -30,33 +30,35 @@ public class TestRational {
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
     rat3 = rat1.add(rat2);
-    System.out.println(rat1);
+    System.out.println(rat3);
     
     System.out.println("Subtracting:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
     rat3 = rat1.subtract(rat2);
-    System.out.println(rat1);
+    System.out.println(rat3);
     
     System.out.println("Multiplying:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
     rat3 = rat1.multiply(rat2);
-    System.out.println(rat1);
+    System.out.println(rat3);
     
     System.out.println("Dividing:");
     rat1 = new Rational(rat1_num, rat1_denom);
     rat2 = new Rational(rat2_num, rat2_denom);
 	rat3 = rat1.divide(rat2);
-    System.out.println(rat1);    
+    System.out.println(rat3);    
     
     System.out.println("Simplifing  fraction 1:");
     rat1 = new Rational(rat1_num, rat1_denom);
-    System.out.println(rat1.simplify()); 
+    rat1.simplify();
+    System.out.println(rat1); 
     	
 	System.out.println("Reciprocal fraction 1:");
     rat1 = new Rational(rat1_num, rat1_denom);
-    System.out.println(rat1.reciprocal()); 
+    rat2 = rat1.reciprocal();
+    System.out.println(rat2); 
     
     System.out.println("Comparing fractions:");
     rat1 = new Rational(rat1_num, rat1_denom);
