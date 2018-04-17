@@ -30,28 +30,32 @@ public class Rational {
     public Rational add(Rational b){
     //Adds two rationals
     	this.common_factor(b);
-		
-		return new Rational(temp_numer1 + temp_numer2, temp_denom1).simplify(this);
+		Rational c = new Rational(temp_numer1 + temp_numer2, temp_denom1);
+		c.simplify();
+		return c;
     }
 
     public Rational subtract(Rational b){
     //Subtracts two rationals
 		this.common_factor(b);
-		
-		return new Rational(temp_numer1 - temp_numer2, temp_denom1).simplify(this);
+		Rational c = new Rational(temp_numer1 - temp_numer2, temp_denom1);
+		c.simplify();
+		return c;
     }
 
     public Rational multiply(Rational b){
 	   	this.common_factor(b);
 		Rational c = new Rational (temp_numer1 * temp_numer2, temp_denom1 * temp_denom2);
-		return c.simplify(c);
+		c.simplify();
+		return c;
 	}
 
     public Rational divide(Rational b){
 	//Divides two fractions
 	   	this.common_factor(b);
-		
-		return new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2).simplify(this);
+		Rational c = new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2);
+		c.simplify();
+		return c;
 	}
 
 	private void common_factor(Rational b){
