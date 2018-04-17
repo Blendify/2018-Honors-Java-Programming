@@ -31,9 +31,9 @@ public class Car {
     	double carHeight = 25.0;
     	double wheelRadius = 5.0;
     	drawRect(xPos, yPos, carLength, carHeight);
-    	drawRect(xPos, yPos + carHeight, 30, 15);
-    	drawCircle(xPos - wheelRadius * 2.0, yPos - wheelRadius *2.0, wheelRadius);
-    	drawCircle(xPos, yPos, wheelRadius);
+    	drawRect(xPos + (carLength / 5), yPos + (carHeight / 1.25), 30, 15);
+    	drawCircle(xPos - (wheelRadius * 3.0), yPos - (wheelRadius * 2.5), wheelRadius);
+    	drawCircle(xPos + (wheelRadius * 3.0), yPos - (wheelRadius * 2.5), wheelRadius);
     }
     
     public void erase(){
