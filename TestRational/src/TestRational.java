@@ -70,3 +70,51 @@ public class TestRational {
     
     }
 }
+
+
+/*
+--------------------Configuration: TestRational - JDK version 1.6.0_14 <Default> - <Default>--------------------
+Default constructor:
+0
+--
+1
+
+Fraction 1 numerator: 1
+Fraction 1 denominator: 3
+Fraction 2 numerator: 6
+Fraction 2 denominator: 9
+Adding:
+1
+--
+1
+
+Subtracting:
+-9
+--
+27
+
+Multiplying:
+2
+--
+9
+
+Dividing:
+1
+--
+2
+
+Simplifing  fraction 1:
+1
+--
+3
+
+Reciprocal fraction 1:
+3
+--
+1
+
+Comparing fractions:
+Fractions are not equal
+
+Process completed.
+ */
