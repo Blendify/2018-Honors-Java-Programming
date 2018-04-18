@@ -70,11 +70,27 @@ public class Rational {
 
     public void simplify(){
     //Simplifies a fraction to its simplist form
+    	boolean is_negative;
+
     	for (int i = Math.min(this.numerator, this.denominator); i >= 2; i--){
+    		if (this.numerator == 0){
+    			System.out.println("Numerator is 0");
+				this.denominator = 1;
+    			break;
+    		}
+    		if ((this.numerator < 0) || (this.denominator < 0)){
+    			is_negative = true;
+				Math.abs(this.numerator);
+				Math.abs(this.denominator);
+    		} else {
+    			is_negative = false;
+    		}
      		if ((this.numerator % i == 0) && (this.denominator % i == 0)){
     			this.numerator /= i;
     			this.denominator /= i;
     		}
+    	if (is_negative == true)
+    		this.numerator *= -1;
    		}
     }
 
