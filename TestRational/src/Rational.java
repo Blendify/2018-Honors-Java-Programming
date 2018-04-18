@@ -123,9 +123,9 @@ public class Rational {
     private void common_factor(Rational b){
     //Quick and dirty method to find a common denominator by
     //mulitpling each fraction by the second's dedenominator
-		temp_numer1 = this.numerator   * b.denominator;
-    	temp_denom1 = this.denominator * b.denominator;
-    	temp_numer2 = b.numerator   * this.denominator;
-    	temp_denom2 = b.denominator * this.denominator;
+	temp_numer1 = this.numerator   * Math.abs(b.denominator);
+    	temp_denom1 = this.denominator * Math.abs(b.denominator);
+    	temp_numer2 = b.numerator   * Math.abs(this.denominator);
+    	temp_denom2 = b.denominator * Math.abs(this.denominator);
 	}
 }
