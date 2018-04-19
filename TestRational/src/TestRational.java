@@ -68,6 +68,29 @@ public class TestRational {
 	else
 		System.out.println("Fractions are not equal");   
     
+    System.out.println("Testing improper fraction:");
+    int rat1_whole = reader.readInt("Fraction 1 whole number: ");
+    Rational ratImproper1 = new Rational(rat1_num, rat1_denom, rat1_whole);
+    
+    System.out.println("Testing improper fraction:");
+    int rat2_whole = reader.readInt("Fraction 2 whole number: ");
+    Rational ratImproper2 = new Rational(rat2_num, rat2_denom, rat2_whole);
+    
+    System.out.println("Adding:");
+	rat3 = ratImproper1.add(ratImproper2);
+    System.out.println(rat3); 
+    
+    System.out.println("Subtracting:");
+	rat3 = ratImproper1.subtract(ratImproper2);
+    System.out.println(rat3);
+
+    System.out.println("Multiply:");
+	rat3 = ratImproper1.multiply(ratImproper2);
+    System.out.println(rat3); 
+
+    System.out.println("Dividing:");
+	rat3 = ratImproper1.divide(ratImproper2);
+    System.out.println(rat3);
     }
 }
 
