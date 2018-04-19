@@ -134,7 +134,7 @@ public class Rational {
     public String toString(){
     //Construct and returns a string representation of the fraction
     	String str;
-    	str = wholeNumber + " " + numerator "/" + denominator + "\n";
+    	str = wholeNumber + " " + numerator + "/" + denominator + "\n";
     	return str;
     }
     
