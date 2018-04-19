@@ -10,7 +10,7 @@
 public class Rational {
 	private int numerator;
 	private int denominator;
-	private double wholeNumber;
+	private int wholeNumber;
 
 	private int temp_numer1, temp_denom1, temp_numer2, temp_denom2;
 
@@ -19,7 +19,7 @@ public class Rational {
     // DEAFULT: create a fraction 0/1
     	numerator = 0;
     	denominator = 1;
-    	wholeNumber = 0.0;
+    	wholeNumber = 0;
     }
 
     public Rational(int numer, int denom) {
@@ -61,15 +61,13 @@ public class Rational {
 		return c;
 	}
 
-    public Rational divide(Rational b){
+   public Rational divide(Rational b){
 	//Divides two fractions
+		this.toImproper();
+	   	b.toImproper();
 	   	this.common_factor(b);
-	   	if (b.wholeNumber == 0){
-	   		double whole = this.wholeNumber;
-	   	} else {
-	   		double whole = this.wholeNumber / b.wholeNumber;
-	   	}
-		Rational c = new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2, whole);
+		Rational c = new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2);
+		c.toMixed();
 		c.simplify();
 		return c;
 	}
