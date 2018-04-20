@@ -63,11 +63,8 @@ public class Rational {
 
    public Rational divide(Rational b){
 	//Divides two fractions
-		this.toImproper();
-	   	b.toImproper();
 	   	this.common_factor(b);
 		Rational c = new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2);
-		c.toMixed();
 		c.simplify();
 		return c;
 	}
@@ -103,6 +100,11 @@ public class Rational {
     	}
     	if (is_negative == true)
     		this.numerator *= -1;
+    	if (this.numerator % this.denominator == 0){
+			this.wholeNumber += this.numerator / this.denominator;
+			this.numerator = 0;
+			this.denominator = 1;
+		}
     }
 
 	public Rational toMixed(){
