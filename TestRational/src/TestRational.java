@@ -3,7 +3,8 @@
  *
  * TestRational application
  *
- * @author 
+ * Discription: test the rational class
+ * @author Aaron Carlisle
  * @version 1.00 2018/4/5
  */
 
@@ -98,46 +99,48 @@ public class TestRational {
 /*
 --------------------Configuration: TestRational - JDK version 1.6.0_14 <Default> - <Default>--------------------
 Default constructor:
-0
---
-1
+0 0/1
 
 Fraction 1 numerator: 1
 Fraction 1 denominator: 3
-Fraction 2 numerator: 6
-Fraction 2 denominator: 9
+Fraction 2 numerator: 1
+Fraction 2 denominator: 3
 Adding:
-1
---
-1
+0 2/3
 
 Subtracting:
--9
---
-27
+0 0/1
 
 Multiplying:
-2
---
-9
+0 1/9
 
 Dividing:
-1
---
-2
+1 0/1
 
 Simplifing  fraction 1:
-1
---
-3
+0 1/3
 
 Reciprocal fraction 1:
-3
---
-1
+0 3/1
 
 Comparing fractions:
-Fractions are not equal
+Fractions are equal
+Testing improper fraction:
+Fraction 1 whole number: 5
+Testing improper fraction:
+Fraction 2 whole number: 3
+Adding:
+8 2/3
+
+Subtracting:
+2 0/1
+
+Multiply:
+15 1/9
+
+Dividing:
+1 0/1
+
 
 Process completed.
  */

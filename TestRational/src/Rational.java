@@ -1,7 +1,9 @@
 /**
  * @(#)Rational.java
  *
+ * Rational class
  *
+ * Discription: Class to work with fractions and mixed fractions
  * @author Aaron Carlisle
  * @version 1.00 2018/4/5
  */
@@ -12,7 +14,7 @@ public class Rational {
 	private int denominator;
 	private int wholeNumber;
 
-	private int temp_numer1, temp_denom1, temp_numer2, temp_denom2;
+	private Rational temp1, temp2;
 
 	/* CONSTRUCTORS */
     public Rational() {
@@ -40,7 +42,8 @@ public class Rational {
     public Rational add(Rational b){
     //Adds two rationals
     	this.common_factor(b);
-		Rational c = new Rational(temp_numer1 + temp_numer2, temp_denom1, this.wholeNumber + b.wholeNumber);
+		Rational c = new Rational(temp1.numerator + temp2.numerator,
+					temp1.denominator, this.wholeNumber + b.wholeNumber);
 		c.simplify();
 		return c;
     }
@@ -48,7 +51,8 @@ public class Rational {
     public Rational subtract(Rational b){
     //Subtracts two rationals
 		this.common_factor(b);
-		Rational c = new Rational(temp_numer1 - temp_numer2, temp_denom1, this.wholeNumber - b.wholeNumber);
+		Rational c = new Rational(temp1.numerator - temp2.numerator,
+					temp1.denominator, this.wholeNumber - b.wholeNumber);
 		c.simplify();
 		return c;
     }
@@ -56,7 +60,9 @@ public class Rational {
     public Rational multiply(Rational b){
     //Multiplies two fractions
 	   	this.common_factor(b);
-		Rational c = new Rational (temp_numer1 * temp_numer2, temp_denom1 * temp_denom2, this.wholeNumber * b.wholeNumber);
+		Rational c = new Rational (temp1.numerator * temp2.numerator,
+								temp1.denominator * temp2.denominator,
+								this.wholeNumber * b.wholeNumber);
 		c.simplify();
 		return c;
 	}
@@ -64,17 +70,18 @@ public class Rational {
    public Rational divide(Rational b){
 	//Divides two fractions
 	   	this.common_factor(b);
-		Rational c = new Rational(temp_numer1 * temp_denom2, temp_denom1 * temp_numer2);
+		Rational c = new Rational(temp1.numerator * temp2.denominator,
+					temp1.denominator * temp2.numerator);
 		c.simplify();
 		return c;
 	}
 
 	public Rational reciprocal(){
 	//Finds the reciprocal of an rational
-		temp_numer1 = this.numerator;
-		temp_denom1 = this.denominator;
+		int temp_numer = this.numerator;
+		int temp_denom = this.denominator;
 		
-		Rational c = new Rational(temp_denom1, temp_numer1);
+		Rational c = new Rational(temp_denom, temp_numer);
 		return c;
 	}
 
@@ -108,18 +115,18 @@ public class Rational {
     }
 
 	public Rational toMixed(){
-		temp_numer1 = this.numerator % this.denominator;
-		temp_denom1 = this.denominator;
+		int temp_numer = this.numerator % this.denominator;
+		int temp_denom = this.denominator;
 		int whole = this.numerator / this.denominator;
-		Rational c = new Rational(temp_numer1, temp_denom1, whole);
+		Rational c = new Rational(temp_numer, temp_denom, whole);
 		c.simplify();
 		return c;
 	}
 
 	public Rational toImproper(){
-		temp_numer1 = this.numerator + (this.wholeNumber * this.denominator);
-		temp_denom1 = this.denominator;
-		Rational c = new Rational(temp_numer1, temp_denom1);
+		int temp_numer = this.numerator + (this.wholeNumber * this.denominator);
+		int temp_denom = this.denominator;
+		Rational c = new Rational(temp_numer, temp_denom);
 		c.simplify();
 		return c;
 	}
@@ -127,7 +134,7 @@ public class Rational {
     public Boolean compare(Rational b){
    	//Compares two rationals for equality
     	this.common_factor(b);
-    	if ((temp_numer1 == temp_numer2) && (temp_denom1 == temp_denom2))
+    	if ((temp1.numerator == temp2.numerator) && (temp1.denominator == temp2.denominator))
     		return true;
     	else
     		return false;
@@ -143,9 +150,9 @@ public class Rational {
     private void common_factor(Rational b){
     //Quick and dirty method to find a common denominator by
     //mulitpling each fraction by the second's dedenominator
-		temp_numer1 = this.numerator   * Math.abs(b.denominator);
-    	temp_denom1 = this.denominator * Math.abs(b.denominator);
-    	temp_numer2 = b.numerator   * Math.abs(this.denominator);
-    	temp_denom2 = b.denominator * Math.abs(this.denominator);
+		temp1 = new Rational(this.numerator * Math.abs(b.denominator),
+							this.denominator * Math.abs(b.denominator));
+		temp2 = new Rational(b.numerator * Math.abs(this.denominator),
+							b.denominator * Math.abs(this.denominator));
 	}
 }
