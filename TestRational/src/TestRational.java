@@ -5,7 +5,7 @@
  *
  * Discription: test the rational class
  * @author Aaron Carlisle
- * @version 1.00 2018/4/5
+ * @version 1.00 2018/04/24
  */
 
 import TerminalIO.KeyboardReader; // used to input rationals
