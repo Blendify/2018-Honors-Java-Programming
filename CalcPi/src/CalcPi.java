@@ -10,21 +10,19 @@
  * @version 1.00 2018/2/28
  */
 
- 
+
 import TerminalIO.KeyboardReader; // Used for user input
 
 public class CalcPi {
-    
+
     public static void main(String[] args) {
     	KeyboardReader reader = new KeyboardReader();
-    	
+
     	double pi = 1.0; // begin with 1 to so we can subtract from it first
     	double denominator = 1.0;
     	int loopCount = 0;
-    	int i;
-    	
-    	i = reader.readInt("Enter number of iterations: ");
-    	
+    	int i = reader.readInt("Enter number of iterations: ");
+
     	while (loopCount < i) {
     		denominator = (denominator + 2.0);
     		if ((loopCount % 2) != 0) // Are we odd or even itererations
