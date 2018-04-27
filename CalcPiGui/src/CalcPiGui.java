@@ -3,27 +3,13 @@
  *
  * CalcPiGui application
  *
- * @author
- * @version 1.00 2018/4/25
+ * @discription A gui to calculate Pi using Leibniz approximation
+ * @author Aaron Carlisle
+ * @version 1.00 2018/4/27
  */
 
 import javax.swing.*;
 import BreezySwing.*;
-
-public double Leibniz (int i){
-	double pi = 1.0; // begin with 1 to so we can subtract from it first
-	double denominator = 1.0;
-
-    for (int loopCount = 0; loopCount < i; loopCount++) {
-    	denominator = (denominator + 2.0);
-    	if ((loopCount % 2) != 0) // Are we odd or even itererations
-			pi += (1.0 / denominator);
-		else
-			pi -= (1.0 / denominator);
-    }
-    pi *= 4.0;
-	return pi;
-}
 
 public class CalcPiGui extends GBFrame {
 	private JLabel       iterationsLabel;
@@ -43,6 +29,8 @@ public class CalcPiGui extends GBFrame {
   }
 
 	public void buttonClicked(JButton buttonObj) {
+		Leibniz pi = new Leibniz();
+		piField.setNumber(pi.leibniz(iterationsField.getNumber()));
 	}
 
     public static void main(String[] args) {
