@@ -2,18 +2,16 @@
 
 <project>
 	<settings>
-		<label>CalcPiGui</label>
+		<label>InterestCompondGui</label>
 		<root_path>\</root_path>
 		<output_path>classes\</output_path>
 		<source_path>src\</source_path>
 		<jdkprofile_ref>JDK version 1.6.0_14</jdkprofile_ref>
-		<compiler_ref>&lt;Default&gt;</compiler_ref>
+		<compiler_ref/>
 		<ant_ref/>
 	</settings>
 	<ant_events/>
-	<run_items>
-		<item run="CalcPiGui"/>
-	</run_items>
+	<run_items/>
 	<runtimes>
 		<runtime>
 			<label>&lt;Default&gt;</label>
@@ -21,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run>CalcPiGui</run>
+			<run/>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
@@ -34,11 +32,7 @@
 				<path>src</path>
 			</folderitem>
 			<fileitem>
-				<path>src\CalcPiGui.java</path>
-				<folder>src</folder>
-			</fileitem>
-			<fileitem>
-				<path>src\Leibniz.java</path>
+				<path>src\InterestCompondGui.java</path>
 				<folder>src</folder>
 			</fileitem>
 		</include>
