@@ -20,31 +20,54 @@ public class InterestCompondGui extends GBFrame {
 	private JLabel       interestEarnedLabel;
 	
 	private DoubleField  principleField;
-	private DoubleField  numPeriodsField;
+	private DoubleField  interestRateField;
 	private IntegerField numPeriodsField;
-	private DoubleField  Field;
-	private DoubleField  Field;
-	private DoubleField  Field;
+	private DoubleField  numYearsField;
+	private DoubleField  newAmountField;
+	private DoubleField  interestEarnedField;
 	
 	private JButton      calculateButton;
 
   public InterestCompondGui() {
   	// Constructor
-  	iterationsLabel = addLabel("Iterations:",1,1,1,1);
-  	piLabel         = addLabel("PI",         1,2,1,1);
+  	principleLabel  = addLabel("Princliple:",      1,1,1,1);
+  	principleLabel  = addLabel("Interest Rate:",   2,1,1,1);
+  	principleLabel  = addLabel("No. of Periods:",  3,1,1,1);
+  	principleLabel  = addLabel("No. of Years:",    4,1,1,1);
+  	principleLabel  = addLabel("New Amount:",      5,1,1,1);
+  	principleLabel  = addLabel("Interest Earned:", 6,1,1,1);
 
-  	iterationsField = addIntegerField   (0,  2,1,1,1);
-  	piField         = addDoubleField    (0.0,2,2,1,1);
-  	calculateButton = addButton         ("Calculate",3,1,2,1);
+	principleField      = addDoubleField (0.0,1,2,1,1);
+	interestRateField   = addDoubleField (0.0,2,2,1,1);
+  	numPeriodsField     = addIntegerField(0,  3,2,1,1);
+	numYearsField       = addDoubleField (0.0,4,2,1,1);
+	newAmountField      = addDoubleField (0.0,5,2,1,1);
+	interestEarnedField = addDoubleField (0.0,6,2,1,1);
+  	
+  	calculateButton = addButton("Calculate",7,1,2,1);
+  	
+  	newAmountField.setEditable(false);
+  	interestEarnedField.setEditable(false);
+  	
+  	//newAmountField.setPrecision(2);
+  	//interestEarnedField.setPrecision(2);
   }
 
 	public void buttonClicked(JButton buttonObj) {
+		Interest ci = new Interest();
+		double p = principleField.getNumber();
+		double r = interestRateField.getNumber();
+		int    n = numPeriodsField.getNumber();
+		double t = numYearsField.getNumber();
+		double amount = ci.interestCompond(p, r, n, t);
+		newAmountField.setNumber(amount);
+		interestEarnedField.setNumber(ci.getInterestEarned());
 	}
 
     public static void main(String[] args) {
 		InterestCompondGui gui = new InterestCompondGui();
 		gui.setTitle("Compond Interest Calculator");
-		gui.setSize(250, 100);
+		gui.setSize(250, 300);
 		gui.setVisible(true);
     }
 }
