@@ -12,8 +12,9 @@ public class Interest {
 	private double interestEarned;
 
     public double interestCompond(double p, double r, int n, double t) {
-    	newAmount = p * Math.pow((1 + (r/n)), n * t);
+    	newAmount = p * Math.pow((1.0 + (r / (double)n)), (double)n * t);
     	interestEarned = newAmount - p;
+    	System.out.println(interestEarned);
     	return newAmount;
     }
     
