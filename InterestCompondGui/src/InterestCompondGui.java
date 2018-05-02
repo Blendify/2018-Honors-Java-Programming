@@ -26,6 +26,7 @@ public class InterestCompondGui extends GBFrame {
 	private DoubleField  newAmountField;
 	private DoubleField  interestEarnedField;
 	
+	private JComboBox    numPeriodsMenu;
 	private JButton      calculateButton;
 
   public InterestCompondGui() {
@@ -39,13 +40,19 @@ public class InterestCompondGui extends GBFrame {
 
 	principleField      = addDoubleField (0.0,1,2,1,1);
 	interestRateField   = addDoubleField (0.0,2,2,1,1);
-  	numPeriodsField     = addIntegerField(0,  3,2,1,1);
+  	numPeriodsMenu      = addComboBox    (    3,2,1,1);
 	numYearsField       = addDoubleField (0.0,4,2,1,1);
 	newAmountField      = addDoubleField (0.0,5,2,1,1);
 	interestEarnedField = addDoubleField (0.0,6,2,1,1);
   	
-  	calculateButton = addButton("Calculate",7,1,2,1);
+  	calculateButton = addButton("Calculate",8,1,2,1);
   	
+  	numPeriodsMenu.addItem ("Annually"); // Default
+    numPeriodsMenu.addItem ("Semiannually");
+    numPeriodsMenu.addItem ("Quarterly");
+    numPeriodsMenu.addItem ("Monthly");
+    numPeriodsMenu.addItem ("Daily");
+
   	newAmountField.setEditable(false);
   	interestEarnedField.setEditable(false);
   	
@@ -55,9 +62,25 @@ public class InterestCompondGui extends GBFrame {
 
 	public void buttonClicked(JButton buttonObj) {
 		Interest ci = new Interest();
+		int n;
+		
+		if (numPeriodsMenu.getSelectedItem().equals("Annually"));
+			n = 1;
+			System.out.println("1");
+		if (numPeriodsMenu.getSelectedItem() == "Semiannually");
+			n = 2;
+			System.out.println("2");
+		if (numPeriodsMenu.getSelectedItem() == "Quarterly");
+			n = 4;
+			System.out.println("4");
+		if (numPeriodsMenu.getSelectedItem() == "Monthly");
+			n = 12;
+			System.out.println("12");
+		if (numPeriodsMenu.getSelectedItem() == "Daily");
+			n = 365;
+			System.out.println("365");
 		double p = principleField.getNumber();
 		double r = interestRateField.getNumber();
-		int    n = numPeriodsField.getNumber();
 		double t = numYearsField.getNumber();
 		double amount = ci.interestCompond(p, r, n, t);
 		newAmountField.setNumber(amount);
