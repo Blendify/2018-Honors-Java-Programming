@@ -49,8 +49,8 @@ public class InterestCompondGui extends GBFrame {
   	newAmountField.setEditable(false);
   	interestEarnedField.setEditable(false);
   	
-  	//newAmountField.setPrecision(2);
-  	//interestEarnedField.setPrecision(2);
+  	newAmountField.setPrecision(2);
+  	interestEarnedField.setPrecision(2);
   }
 
 	public void buttonClicked(JButton buttonObj) {
