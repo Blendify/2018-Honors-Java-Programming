@@ -18,12 +18,12 @@ public class Interest {
     	interestEarned = newAmount - p;
     	return newAmount;
     }
-    
+
     public double getNewAmount() {
     	return newAmount;
     }
     public double getInterestEarned() {
     	return interestEarned;
     }
-    
+
 }
