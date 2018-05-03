@@ -5,7 +5,7 @@
  *
  * @discription: Calulates compond interest and interest earned
  * @author Aaron Carlisle
- * @version 1.00 2018/5/1
+ * @version 1.00 2018/05/03
  */
 
 
