@@ -3,7 +3,8 @@
  *
  * InterestCompondGui application
  *
- * @author 
+ * @discription: GUI to calculate compond interest
+ * @author Aaron Carlisle
  * @version 1.00 2018/4/27
  */
 
@@ -64,21 +65,20 @@ public class InterestCompondGui extends GBFrame {
 		Interest ci = new Interest();
 		int n;
 		
-		if (numPeriodsMenu.getSelectedItem().equals("Annually"));
+		if (numPeriodsMenu.getSelectedItem() == "Annually") {
 			n = 1;
-			System.out.println("1");
-		if (numPeriodsMenu.getSelectedItem() == "Semiannually");
+		}
+		else if(numPeriodsMenu.getSelectedItem() == "Semiannually") {
 			n = 2;
-			System.out.println("2");
-		if (numPeriodsMenu.getSelectedItem() == "Quarterly");
+		}
+		else if(numPeriodsMenu.getSelectedItem() == "Quarterly") {
 			n = 4;
-			System.out.println("4");
-		if (numPeriodsMenu.getSelectedItem() == "Monthly");
+		}
+		else if(numPeriodsMenu.getSelectedItem() == "Monthly") {
 			n = 12;
-			System.out.println("12");
-		if (numPeriodsMenu.getSelectedItem() == "Daily");
+		} else {
 			n = 365;
-			System.out.println("365");
+		}
 		double p = principleField.getNumber();
 		double r = interestRateField.getNumber();
 		double t = numYearsField.getNumber();
