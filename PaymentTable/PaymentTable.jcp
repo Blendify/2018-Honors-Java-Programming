@@ -19,7 +19,7 @@
 			<applet_ref/>
 			<debugger_ref/>
 			<param/>
-			<run/>
+			<run>PaymentTable</run>
 			<verify>true</verify>
 		</runtime>
 	</runtimes>
@@ -41,12 +41,5 @@
 			</fileitem>
 		</include>
 	</files>
-	<tasks>
-		<todotaskitem>
-			<description>TODO, add your application code</description>
-			<filepath>src\PaymentTable.java</filepath>
-			<line>16</line>
-			<timestamp>1525369625</timestamp>
-		</todotaskitem>
-	</tasks>
+	<tasks/>
 </project>

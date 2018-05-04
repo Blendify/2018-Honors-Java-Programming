@@ -19,14 +19,14 @@ public class InterestCompondGui extends GBFrame {
 	private JLabel       numYearsLabel;
 	private JLabel       newAmountLabel;
 	private JLabel       interestEarnedLabel;
-	
+
 	private DoubleField  principleField;
 	private DoubleField  interestRateField;
 	private IntegerField numPeriodsField;
 	private DoubleField  numYearsField;
 	private DoubleField  newAmountField;
 	private DoubleField  interestEarnedField;
-	
+
 	private JComboBox    numPeriodsMenu;
 	private JButton      calculateButton;
 
@@ -41,13 +41,13 @@ public class InterestCompondGui extends GBFrame {
 
 	principleField      = addDoubleField (0.0,1,2,1,1);
 	interestRateField   = addDoubleField (0.0,2,2,1,1);
-  	numPeriodsMenu      = addComboBox    (    3,2,1,1);
+  numPeriodsMenu      = addComboBox    (    3,2,1,1);
 	numYearsField       = addDoubleField (0.0,4,2,1,1);
 	newAmountField      = addDoubleField (0.0,5,2,1,1);
 	interestEarnedField = addDoubleField (0.0,6,2,1,1);
-  	
+
   	calculateButton = addButton("Calculate",8,1,2,1);
-  	
+
   	// Menu options
   	numPeriodsMenu.addItem ("Annually"); // Default
     numPeriodsMenu.addItem ("Semiannually");
@@ -58,7 +58,7 @@ public class InterestCompondGui extends GBFrame {
 	// Answer fields
   	newAmountField.setEditable(false);
   	interestEarnedField.setEditable(false);
-  	
+
   	// Formate as money values
   	newAmountField.setPrecision(2);
   	interestEarnedField.setPrecision(2);
@@ -67,7 +67,7 @@ public class InterestCompondGui extends GBFrame {
 	public void buttonClicked(JButton buttonObj) {
 		Interest ci = new Interest();
 		int n;
-		
+
 		if (numPeriodsMenu.getSelectedItem() == "Annually") {
 			n = 1;
 		}
