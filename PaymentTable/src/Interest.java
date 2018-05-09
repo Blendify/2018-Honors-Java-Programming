@@ -17,7 +17,6 @@ public class Interest {
 	private double monthlyPayment;
 	private double currentBalance;
 	private double interest;
-	private double interestOwed;
 
 	// Rates
 	private final double RATE_DOWN_PAYMENT    = 0.10;
@@ -29,6 +28,7 @@ public class Interest {
 		// initial calcualtions
 		month = 0;
 		principle = p;
+		totalOwed = principle;
 		currentBalance = principle;
 		downPayment = principle * RATE_DOWN_PAYMENT;
 		this.calculate();
@@ -37,22 +37,23 @@ public class Interest {
 		System.out.println("Monthly Payment: " + monthlyPayment);
 		System.out.println("Current Balance: " + currentBalance);
 		System.out.println("Interest: " + interest);
-		System.out.println("Total Interest Owed: " + interestOwed);
 	}
 	
 	public void calculate() {
 		// calculations per month
 		month++;
-		monthlyPayment = RATE_MONTHLY_PAYMENT * (principle - downPayment);
 		this.interestCompond(currentBalance, RATE_ANNUAL_INTEREST, 12, 1);
-		totalOwed += interestOwed;
+		monthlyPayment = RATE_MONTHLY_PAYMENT * (principle - downPayment) + interest;
+		if (month == 1) {
+			monthlyPayment += downPayment;
+		}
+		totalOwed += interest;
 	}
 
     private void interestCompond(double p, double r, int n, double t) {
     	currentBalance = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
     	interest       = currentBalance - p;
     	currentBalance = currentBalance - monthlyPayment;
-    	interestOwed  += interest;
     }
 
 	public int getMonth() {

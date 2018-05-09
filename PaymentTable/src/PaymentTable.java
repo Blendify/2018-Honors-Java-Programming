@@ -41,12 +41,12 @@ public class PaymentTable extends GBFrame {
 		Interest debt = new Interest(p);
 		
 		line =  Format.justify('l', debt.getMonth(),      5) +
-  				Format.justify('r', debt.getTotalOwed(),  12) +
-  				Format.justify('r', "Interest Owed ",     14) +
+  				Format.justify('r', debt.getTotalOwed(),  12, 2) +
+  				Format.justify('r', debt.getInterest(),  14, 2) +
   				Format.justify('r', "Principle Owed ",    15) +
-  				Format.justify('r', "Payment ",            9) +
+  				Format.justify('r', debt.getMonthlyPayment(), 9, 2) +
   				Format.justify('r', "Remaining Balance",  17) + "\n";
-		output.append(line + "\n");
+		output.append(line);
 	}
 
     public static void main(String[] args) {
