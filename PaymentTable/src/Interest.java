@@ -12,6 +12,7 @@
 public class Interest {
 	private int    month;
 	private double principle;
+	private double principleOwed;
 	private double totalOwed;
 	private double downPayment;
 	private double monthlyPayment;
@@ -32,6 +33,7 @@ public class Interest {
 		currentBalance = principle;
 		downPayment = principle * RATE_DOWN_PAYMENT;
 		this.calculate();
+		principleOwed = monthlyPayment - interest;
 		System.out.println("Principle: " + principle);
 		System.out.println("DownPayment: " + downPayment);
 		System.out.println("Monthly Payment: " + monthlyPayment);
@@ -73,6 +75,16 @@ public class Interest {
 	}
 
 	public double getInterest() {
-		return interest;
+		return currentBalance * RATE_ANNUAL_INTEREST / 12.0;
 	}
+	
+	public double getPrincipleOwed() {
+		return principleOwed;
+	}
+	
+	
+	public double getRemainingBalance() {
+		return currentBalance - monthlyPayment;
+	}
+	
 }
