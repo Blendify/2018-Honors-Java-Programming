@@ -75,7 +75,7 @@ public class Interest {
 	}
 
 	public double getInterest() {
-		return currentBalance * RATE_ANNUAL_INTEREST / 12.0;
+		return interest;
 	}
 	
 	public double getPrincipleOwed() {

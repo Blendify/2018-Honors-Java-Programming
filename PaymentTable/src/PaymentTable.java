@@ -15,15 +15,14 @@ public class PaymentTable extends GBFrame {
 	private DoubleField  purchasePriceField;
 	private JButton      calculateButton;
 	private JTextArea    output;
+	private String header = Format.justify('l', "Month",              5) +
+  							Format.justify('r', "Total Owed ",        12) +
+  							Format.justify('r', "Interest Owed ",     14) +
+  							Format.justify('r', "Principle Owed ",    15) +
+  							Format.justify('r', "Payment ",            9) +
+  							Format.justify('r', "Remaining Balance",  17) + "\n";
 
   public PaymentTable() {
-  	String header = Format.justify('l', "Month",              5) +
-  					Format.justify('r', "Total Owed ",        12) +
-  					Format.justify('r', "Interest Owed ",     14) +
-  					Format.justify('r', "Principle Owed ",    15) +
-  					Format.justify('r', "Payment ",            9) +
-  					Format.justify('r', "Remaining Balance",  17) + "\n";
-
   	// Constructor
   	purchasePriceLabel = addLabel      ("Purchase Price:", 1,1,1,1);
 	purchasePriceField = addDoubleField(0.0,               1,2,1,1);
@@ -39,14 +38,23 @@ public class PaymentTable extends GBFrame {
 		String line;
 		double p = purchasePriceField.getNumber();
 		Interest debt = new Interest(p);
+
+		output.setText(header);
 		
-		line =  Format.justify('l', debt.getMonth(),      5) +
-  				Format.justify('r', debt.getTotalOwed(),  12, 2) +
-  				Format.justify('r', debt.getInterest(),  14, 2) +
-  				Format.justify('r', debt.getPrincipleOwed(), 15, 2) +
-  				Format.justify('r', debt.getMonthlyPayment(), 9, 2) +
-  				Format.justify('r', debt.getRemainingBalance(),  17, 2) + "\n";
-		output.append(line);
+		if (purchasePriceField.getNumber() <= 0) {
+			output.setText("Please enter a valid price");
+		} else {
+			while (debt.getRemainingBalance() >= 0.0) {
+				line =  Format.justify('l', debt.getMonth(),      5) +
+  						Format.justify('r', debt.getTotalOwed(),  12, 2) +
+  						Format.justify('r', debt.getInterest(),  14, 2) +
+  						Format.justify('r', debt.getPrincipleOwed(), 15, 2) +
+  						Format.justify('r', debt.getMonthlyPayment(), 9, 2) +
+  						Format.justify('r', debt.getRemainingBalance(),  17, 2) + "\n";
+				output.append(line);
+				debt.calculate();
+			}
+		}
 	}
 
     public static void main(String[] args) {
