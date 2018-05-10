@@ -45,7 +45,7 @@ public class Interest {
 		// calculations per month
 		month++;
 		this.interestCompond(currentBalance, RATE_ANNUAL_INTEREST, 12, 1);
-		monthlyPayment = RATE_MONTHLY_PAYMENT * (principle - downPayment) + interest;
+		monthlyPayment = RATE_MONTHLY_PAYMENT * currentBalance + interest;
 		if (month == 1) {
 			monthlyPayment += downPayment;
 		}
