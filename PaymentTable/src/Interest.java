@@ -12,7 +12,6 @@
 public class Interest {
 	private int    month;
 	private double principle;
-	private double principleOwed;
 	private double totalOwed;
 	private double downPayment;
 	private double monthlyPayment;
@@ -33,7 +32,6 @@ public class Interest {
 		currentBalance = principle;
 		downPayment = principle * RATE_DOWN_PAYMENT;
 		this.calculate();
-		principleOwed = monthlyPayment - interest;
 	}
 	
 	public void calculate() {
@@ -74,6 +72,6 @@ public class Interest {
 	}
 	
 	public double getPrincipleOwed() {
-		return principleOwed;
+		return monthlyPayment - interest;
 	}
 }
