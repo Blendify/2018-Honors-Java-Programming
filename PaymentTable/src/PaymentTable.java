@@ -44,13 +44,13 @@ public class PaymentTable extends GBFrame {
 		if (purchasePriceField.getNumber() <= 0) {
 			output.setText("Please enter a valid price");
 		} else {
-			while (debt.getRemainingBalance() >= 0.0) {
+			while (debt.getCurrentBalance() >= 0.0) {
 				line =  Format.justify('l', debt.getMonth(),      5) +
   						Format.justify('r', debt.getTotalOwed(),  12, 2) +
   						Format.justify('r', debt.getInterest(),  14, 2) +
   						Format.justify('r', debt.getPrincipleOwed(), 15, 2) +
   						Format.justify('r', debt.getMonthlyPayment(), 9, 2) +
-  						Format.justify('r', debt.getRemainingBalance(),  17, 2) + "\n";
+  						Format.justify('r', debt.getCurrentBalance(),  17, 2) + "\n";
 				output.append(line);
 				debt.calculate();
 			}
