@@ -12,10 +12,10 @@
 public class Interest {
 	private int    month;
 	private double principle;
-	private double totalOwed;
+	private double newBal;
 	private double downPayment;
 	private double monthlyPayment;
-	private double currentBalance;
+	private double beginBalance;
 	private double interest;
 
 	// Rates
@@ -28,8 +28,7 @@ public class Interest {
 		// initial calcualtions
 		month = 0;
 		principle = p;
-		totalOwed = principle;
-		currentBalance = principle;
+		beginBalance = principle - downPayment;
 		downPayment = principle * RATE_DOWN_PAYMENT;
 		this.calculate();
 	}
@@ -37,18 +36,16 @@ public class Interest {
 	public void calculate() {
 		// calculations per month
 		month++;
-		this.interestCompond(currentBalance, RATE_ANNUAL_INTEREST, 12, 1);
-		monthlyPayment = RATE_MONTHLY_PAYMENT * principle + interest;
-		if (month == 1) {
-			monthlyPayment += downPayment;
-		}
-		totalOwed += interest;
-		currentBalance -= monthlyPayment;
+		this.interestCompond(beginBalance, RATE_ANNUAL_INTEREST, 12, 1);
+		monthlyPayment = RATE_MONTHLY_PAYMENT * principle;
+		beginBalance -= monthlyPayment;
+		newBal = beginBalance - monthlyPayment;
+		beginBalance = newBal;
 	}
 
     private void interestCompond(double p, double r, int n, double t) {
-    	currentBalance = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
-    	interest       = currentBalance - p;
+    	beginBalance = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
+    	interest       = beginBalance - p;
     }
 
 	public int getMonth() {
@@ -60,15 +57,15 @@ public class Interest {
 	}
 	
 	public double getTotalOwed() {
-		return totalOwed;
+		return newBal;
 	}
 
-	public double getCurrentBalance() {
-		return currentBalance;
+	public double getBeginBalance() {
+		return beginBalance;
 	}
 
 	public double getInterest() {
-		return currentBalance * (RATE_ANNUAL_INTEREST / 12.0);
+		return beginBalance * (RATE_ANNUAL_INTEREST / 12.0);
 	}
 	
 	public double getPrincipleOwed() {

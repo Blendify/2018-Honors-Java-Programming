@@ -16,7 +16,7 @@ public class PaymentTable extends GBFrame {
 	private JButton      calculateButton;
 	private JTextArea    output;
 	private String header = Format.justify('l', "Month",              5) +
-  							Format.justify('r', "Total Owed ",        12) +
+  							Format.justify('r', "Beg. Balan ",        12) +
   							Format.justify('r', "Interest Owed ",     14) +
   							Format.justify('r', "Principle Owed ",    15) +
   							Format.justify('r', "Payment ",            9) +
@@ -44,13 +44,13 @@ public class PaymentTable extends GBFrame {
 		if (purchasePriceField.getNumber() <= 0) {
 			output.setText("Please enter a valid price");
 		} else {
-			while (debt.getCurrentBalance() >= 0.0) {
+			while (debt.getBeginBalance() >= 0.0) {
 				line =  Format.justify('l', debt.getMonth(),      5) +
-  						Format.justify('r', debt.getTotalOwed(),  12, 2) +
+  						Format.justify('r', debt.getBeginBalance(),  12, 2) +
   						Format.justify('r', debt.getInterest(),  14, 2) +
   						Format.justify('r', debt.getPrincipleOwed(), 15, 2) +
   						Format.justify('r', debt.getMonthlyPayment(), 9, 2) +
-  						Format.justify('r', debt.getCurrentBalance(),  17, 2) + "\n";
+  						Format.justify('r', debt.getTotalOwed(),  17, 2) + "\n";
 				output.append(line);
 				debt.calculate();
 			}
