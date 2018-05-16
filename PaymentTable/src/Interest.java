@@ -44,8 +44,9 @@ public class Interest {
 	}
 
     private void interestCompond(double p, double r, int n, double t) {
-    	beginBalance = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
-    	interest       = beginBalance - p;
+    	double temp;
+    	temp = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
+    	interest       = temp - p;
     }
 
 	public int getMonth() {
