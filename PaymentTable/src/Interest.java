@@ -17,6 +17,8 @@ public class Interest {
 	private double monthlyPayment;
 	private double beginBalance;
 	private double interest;
+	
+	private double temp;
 
 	// Rates
 	private final double RATE_DOWN_PAYMENT    = 0.10;
@@ -29,6 +31,7 @@ public class Interest {
 		month = 0;
 		principle = p;
 		beginBalance = principle - downPayment;
+		temp = beginBalance;
 		downPayment = principle * RATE_DOWN_PAYMENT;
 		this.calculate();
 	}
@@ -36,16 +39,16 @@ public class Interest {
 	public void calculate() {
 		// calculations per month
 		month++;
+		beginBalance = temp;
 		this.interestCompond(beginBalance, RATE_ANNUAL_INTEREST, 12, 1);
-		monthlyPayment = RATE_MONTHLY_PAYMENT * principle;
-		beginBalance -= monthlyPayment;
-		newBal = beginBalance - monthlyPayment;
-		beginBalance = newBal;
+		monthlyPayment = RATE_MONTHLY_PAYMENT * (principle - downPayment);
+		temp = beginBalance - monthlyPayment;
+		newBal = temp;
 	}
 
     private void interestCompond(double p, double r, int n, double t) {
-    	double temp;
-    	temp = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
+    	double tempo;
+    	tempo = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
     	interest       = temp - p;
     }
 
