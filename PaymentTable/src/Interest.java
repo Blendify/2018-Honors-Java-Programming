@@ -71,4 +71,8 @@ public class Interest {
 	public double getPrincipleOwed() {
 		return monthlyPayment - interest;
 	}
+	
+	public double getDownPayment() {
+		return downPayment;
+	}
 }

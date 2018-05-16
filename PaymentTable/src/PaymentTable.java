@@ -12,7 +12,9 @@ import BreezySwing.*;
 
 public class PaymentTable extends GBFrame {
 	private JLabel       purchasePriceLabel;
+	private JLabel       downPaymentLabel;
 	private DoubleField  purchasePriceField;
+	private DoubleField  downPaymentField;
 	private JButton      calculateButton;
 	private JTextArea    output;
 	private String header = Format.justify('l', "Month",              5) +
@@ -26,12 +28,18 @@ public class PaymentTable extends GBFrame {
   	// Constructor
   	purchasePriceLabel = addLabel      ("Purchase Price:", 1,1,1,1);
 	purchasePriceField = addDoubleField(0.0,               1,2,1,1);
-  	calculateButton    = addButton     ("Calculate",       2,1,2,1);
-  	output             = addTextArea   (header,            3,1,3,1);
+	downPaymentLabel   = addLabel      ("Down Payment:",   2,1,1,1);
+	downPaymentField   = addDoubleField(0.0,               2,2,1,1);
+  	calculateButton    = addButton     ("Calculate",       3,1,2,1);
+  	output             = addTextArea   (header,            4,1,3,1);
 
+	// Return Fields
 	output.setEnabled(false);
+    downPaymentField.setEditable(false);
+
   	// Formate as money values
   	purchasePriceField.setPrecision(2);
+  	downPaymentField.setPrecision(2);
   }
 
 	public void buttonClicked(JButton buttonObj) {
@@ -44,6 +52,8 @@ public class PaymentTable extends GBFrame {
 		if (purchasePriceField.getNumber() <= 0) {
 			output.setText("Please enter a valid price");
 		} else {
+			downPaymentField.setNumber(debt.getDownPayment());
+
 			while (debt.getBeginBalance() >= 0.0) {
 				line =  Format.justify('l', debt.getMonth(),      5) +
   						Format.justify('r', debt.getBeginBalance(),  12, 2) +
