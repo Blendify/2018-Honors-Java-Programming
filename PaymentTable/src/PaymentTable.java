@@ -54,7 +54,7 @@ public class PaymentTable extends GBFrame {
 		} else {
 			downPaymentField.setNumber(debt.getDownPayment());
 
-			while (debt.getBeginBalance() >= 0.0) {
+			while (debt.getBeginBalance() > 0.0) {
 				line =  Format.justify('l', debt.getMonth(),      5) +
   						Format.justify('r', debt.getBeginBalance(),  12, 2) +
   						Format.justify('r', debt.getInterest(),  14, 2) +
