@@ -42,7 +42,7 @@ public class Interest {
 		month++;
 		beginBalance = temp;
 		this.interestCompond(beginBalance, RATE_ANNUAL_INTEREST, 12, 1);
-		temp = beginBalance - monthlyPayment;
+		temp = beginBalance - (monthlyPayment - (beginBalance * (RATE_ANNUAL_INTEREST / 12.0)));
 		if (temp < 0) {
 			newBal = beginBalance - beginBalance;
 			monthlyPayment = beginBalance;
@@ -55,7 +55,7 @@ public class Interest {
     private void interestCompond(double p, double r, int n, double t) {
     	double tempo;
     	tempo = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
-    	interest = temp - p;
+    	interest = tempo - p;
     }
 
 	public int getMonth() {
@@ -79,7 +79,7 @@ public class Interest {
 	}
 	
 	public double getPrincipleOwed() {
-		return monthlyPayment - interest;
+		return monthlyPayment - (beginBalance * (RATE_ANNUAL_INTEREST / 12.0));
 	}
 	
 	public double getDownPayment() {
