@@ -43,7 +43,13 @@ public class Interest {
 		this.interestCompond(beginBalance, RATE_ANNUAL_INTEREST, 12, 1);
 		monthlyPayment = RATE_MONTHLY_PAYMENT * (principle - downPayment);
 		temp = beginBalance - monthlyPayment;
-		newBal = temp;
+		if (temp < 0) {
+			newBal = beginBalance - beginBalance;
+			monthlyPayment = beginBalance;
+		}
+		else {	
+			newBal = temp;
+	}
 	}
 
     private void interestCompond(double p, double r, int n, double t) {
