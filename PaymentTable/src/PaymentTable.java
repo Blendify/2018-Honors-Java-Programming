@@ -2,13 +2,14 @@
  * @(#)PaymentTable.java
  *
  * PaymentTable application
- *
+ * 
+ * @discription Displays a table for the payment of a loan
  * @author Aaron Carlisle
- * @version 1.00 2018/5/3
+ * @version 1.00 2018/05/22
  */
 
-import javax.swing.*;
-import BreezySwing.*;
+import javax.swing.*; // Used for GUI
+import BreezySwing.*; // Used for GUI
 
 public class PaymentTable extends GBFrame {
 	private JLabel       purchasePriceLabel;
@@ -47,13 +48,15 @@ public class PaymentTable extends GBFrame {
 		double p = purchasePriceField.getNumber();
 		Interest debt = new Interest(p);
 
+		// Reset text area
 		output.setText(header);
 		
+		// Sanity check
 		if (purchasePriceField.getNumber() <= 0) {
 			output.setText("Please enter a valid price");
 		} else {
 			downPaymentField.setNumber(debt.getDownPayment());
-
+			// Add lines untill balance is 0
 			while (debt.getBeginBalance() > 0.0) {
 				line =  Format.justify('l', debt.getMonth(),      5) +
   						Format.justify('r', debt.getBeginBalance(),  12, 2) +

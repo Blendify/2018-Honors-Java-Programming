@@ -8,7 +8,6 @@
  * @version 1.00 2018/05/03
  */
 
-
 public class Interest {
 	private int    month;
 	private double principle;
@@ -18,7 +17,7 @@ public class Interest {
 	private double beginBalance;
 	private double interest;
 	
-	private double temp;
+	private double temp; // Temp storage
 
 	// Rates
 	private final double RATE_DOWN_PAYMENT    = 0.10;
@@ -27,6 +26,7 @@ public class Interest {
 
 	// Constructor
 	public Interest(double p) {
+		// Constructor
 		// initial calcualtions
 		month = 0;
 		principle = p;
@@ -53,36 +53,42 @@ public class Interest {
 	}
 
     private void interestCompond(double p, double r, int n, double t) {
-    	double tempo;
-    	tempo = p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t);
-    	interest = tempo - p;
+    	// Calculate interest
+    	interest = (p * Math.pow((1.0 + ((r *0.01) / (double)n)), (double)n * t)) - p;
     }
 
 	public int getMonth() {
+		// return month number
 		return month;
 	}
 
 	public double getMonthlyPayment() {
+		// return the monthly payment
 		return monthlyPayment;
 	}
 	
 	public double getTotalOwed() {
+		// return the new balance
 		return newBal;
 	}
 
 	public double getBeginBalance() {
+		// return the begining balance
 		return beginBalance;
 	}
 
 	public double getInterest() {
+		// return the interest due per month
 		return beginBalance * (RATE_ANNUAL_INTEREST / 12.0);
 	}
 	
 	public double getPrincipleOwed() {
+		// return the total interest owed
 		return monthlyPayment - (beginBalance * (RATE_ANNUAL_INTEREST / 12.0));
 	}
 	
 	public double getDownPayment() {
+		// return the downpayment
 		return downPayment;
 	}
 }
