@@ -52,7 +52,7 @@ public class PaymentTable extends GBFrame {
 		output.setText(header);
 		
 		// Sanity check
-		if (purchasePriceField.getNumber() <= 0) {
+		if (purchasePriceField.getNumber() <= 0.0) {
 			output.setText("Please enter a valid price");
 		} else {
 			downPaymentField.setNumber(debt.getDownPayment());

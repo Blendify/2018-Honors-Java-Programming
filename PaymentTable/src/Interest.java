@@ -43,7 +43,7 @@ public class Interest {
 		beginBalance = temp;
 		this.interestCompond(beginBalance, RATE_ANNUAL_INTEREST, 12, 1);
 		temp = beginBalance - (monthlyPayment - (beginBalance * (RATE_ANNUAL_INTEREST / 12.0)));
-		if (temp < 0) {
+		if (temp < 0.0) {
 			newBal = beginBalance - beginBalance;
 			monthlyPayment = beginBalance;
 		}
