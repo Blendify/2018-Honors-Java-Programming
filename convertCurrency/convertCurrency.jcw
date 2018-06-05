@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>convertCurrency</label>
+	</settings>
+	<users>
+		<user>
+			<path>convertCurrency.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>convertCurrency.jcp</path>
+		</project>
+	</projects>
+</workspace>
